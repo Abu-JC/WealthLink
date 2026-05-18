@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wealth Link</title>
+    <link rel="stylesheet" href="finance.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-left">
+    <a href="#" class="logo">WealthLink</a>
+
+    <!-- Keep the links in their own list -->
+    <ul class="nav-links">
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Reports</a></li>
+        <li><a href="#">Assets</a></li>
+    </ul>
+        </div>
+        <div class="nav-right">
+    <ul class="nav-icons">
+        <li><img src="img/bell.png" alt="bell" class="bell"></li>
+        <li><img src="img/gear.png" alt="settings" class="gear"></li>
+        <div class="profile-container">
+    <label for="file-upload" class="profile-img">
+    </label>
+    <input type="file" id="file-upload" accept="image/*">
+</div> 
+    </ul>
+</div>
+    </div>
+
+    <!--Transaction history-->
+    <div class="t-container">
+    <section class="t-history">
+        <div class="t-header">
+            <h3 class="t-head">Transaction History</h3>
+            <div class="t-actions">
+                <button class="t-icon-btn" id="t-icon-btn"><span id="chevron" class="material-symbols-outlined">filter_list</span></button>
+                <button class="t-icon-btn"><span class="material-symbols-outlined">search</span></button>
+            </div>
+        </div>
+        
+        <hr class="t-underline">
+        
+        <div class="t-records-list">
+            
+            <div class="t-record">
+                <div class="t-record-left">
+                    <div class="t-icon t-icon-expense">
+                        <span class="material-symbols-outlined">shopping_cart</span>
+                    </div>
+                    <div class="t-record-details">
+                        <h4>School Fees</h4>
+                        <p>2026-05-13</p>
+                    </div>
+                </div>
+                <div class="t-record-amount text-expense">-KSh 20,000.00</div>
+            </div>
+
+            <div class="t-record">
+                <div class="t-record-left">
+                    <div class="t-icon t-icon-income">
+                        <span class="material-symbols-outlined">payments</span>
+                    </div>
+                    <div class="t-record-details">
+                        <h4>Consulting Fee</h4>
+                        <p>2026-05-14</p>
+                    </div>
+                </div>
+                <div class="t-record-amount text-income">+KSh 45,000.00</div>
+            </div>
+
+        </div>
+    </section>
+</div>
+
+    <!--Form Section-->
+
+    <div class="sidebar-right">
+    <form class="transactions">
+        <h3 class="f-header">New Transaction</h3>
+        <p class="f-text">Enter your recent transaction</p>
+        <h4 class="i-header">DESCRIPTION</h4>
+        <input required id="f-description" type="text" placeholder="e.g. Consultation Fees">
+        <h4 class="i-header">AMOUNT(KSH)</h4>
+        <input required id="f-amount" type="text" placeholder="ksh.0.00">
+        <div class="category-section">
+    <h4 class="i-header">CATEGORY TYPE</h4>
+    <div class="radio-group">
+        <input type="radio" id="income" name="type" value="income" checked>
+        <label class="btn-income" for="income"><span>⊕</span>Income</label>
+        
+        <input type="radio" id="expense" name="type" value="expense">
+        <label class="btn-expense" for="expense"><span>⊝</span>Expense</label>
+    </div>
+</div>
+    <h4 class="date">DATE</h4>
+    <input required id="f-date" type="date"><br><br>
+    <button class="f-submit" type="submit">◙ Add Transaction</button>
+    
+    </form>
+    </div>
+    <script src="finance.js"></script>
+</body>
+</html>
