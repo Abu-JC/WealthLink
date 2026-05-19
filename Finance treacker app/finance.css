@@ -86,8 +86,8 @@ body{
     display: none; 
 }
 .profile-img {
-    width: 35px;
-    height: 35px;
+    width: 55px;
+    height: 55px;
     background-color: #F5F7FA;
     border-radius: 50%;
     border: 2px solid white;
@@ -256,7 +256,15 @@ input[type="date"] {
 .t-icon-btn:hover {
     background-color: #eae7ef; /* surface-container-high */
 }
-
+.t-icon-btn#clear-history:hover{
+    background-color:#e21422b2;
+}
+.t-cleared{
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    color: #23af20;
+}
 .t-underline {
     border: 0;
     border-top: 1px solid #c6c5d4; /* outline-variant */
@@ -281,7 +289,7 @@ input[type="date"] {
 #chevron.open{
     transform: rotate(180deg);
 }
-/* Individual Row Layout */
+
 .t-record {
     display: flex;
     justify-content: space-between;

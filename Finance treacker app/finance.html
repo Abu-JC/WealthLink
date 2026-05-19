@@ -41,38 +41,13 @@
             <div class="t-actions">
                 <button class="t-icon-btn" id="t-icon-btn"><span id="chevron" class="material-symbols-outlined">filter_list</span></button>
                 <button class="t-icon-btn"><span class="material-symbols-outlined">search</span></button>
+                <button id="clear-history" class="t-icon-btn"><span class="material-symbols-outlined">delete</span></button>
             </div>
         </div>
         
         <hr class="t-underline">
         
         <div class="t-records-list">
-            
-            <div class="t-record">
-                <div class="t-record-left">
-                    <div class="t-icon t-icon-expense">
-                        <span class="material-symbols-outlined">shopping_cart</span>
-                    </div>
-                    <div class="t-record-details">
-                        <h4>School Fees</h4>
-                        <p>2026-05-13</p>
-                    </div>
-                </div>
-                <div class="t-record-amount text-expense">-KSh 20,000.00</div>
-            </div>
-
-            <div class="t-record">
-                <div class="t-record-left">
-                    <div class="t-icon t-icon-income">
-                        <span class="material-symbols-outlined">payments</span>
-                    </div>
-                    <div class="t-record-details">
-                        <h4>Consulting Fee</h4>
-                        <p>2026-05-14</p>
-                    </div>
-                </div>
-                <div class="t-record-amount text-income">+KSh 45,000.00</div>
-            </div>
 
         </div>
     </section>
@@ -87,7 +62,7 @@
         <h4 class="i-header">DESCRIPTION</h4>
         <input required id="f-description" type="text" placeholder="e.g. Consultation Fees">
         <h4 class="i-header">AMOUNT(KSH)</h4>
-        <input required id="f-amount" type="text" placeholder="ksh.0.00">
+        <input required id="f-amount" type="number" placeholder="ksh.0.00">
         <div class="category-section">
     <h4 class="i-header">CATEGORY TYPE</h4>
     <div class="radio-group">
