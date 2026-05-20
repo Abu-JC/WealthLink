@@ -16,6 +16,23 @@ transactionForm.addEventListener('submit',event=>{
     transactionForm.reset();
     renderTransactions();
 });
+//Update Networth
+function updateNetworth(){
+    const totalIncome = transactions.reduce((total,current) =>{
+        return current.type==='income'?total +parseFloat(current.amount):total;
+    },0);
+    const totalExpense = transactions.reduce((total,current)=>{
+        return current.type==='expense'?total + parseFloat(current.amount):total;
+    },0);
+    const totalNetworth = totalIncome-totalExpense;
+    const formattedNetworth = totalNetworth.toLocaleString('en-KE',{
+         minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+})
+document.getElementById('networth-amount').textContent = `KSH ${formattedNetworth}`;
+const styleNet = document.getElementById('networth-amount');
+styleNet.style.color = totalNetworth>=0 ? "#ffffff":"#db1421e8";
+}
 //The Dropdown button
 const RecordList = document.querySelector('.t-records-list');
 const chevron = document.getElementById('chevron');
@@ -32,6 +49,7 @@ function renderTransactions(){
         RecordList.innerHTML = `
         <div class="empty-list">
         <p class="t-cleared">No Transactions recorded. Add a transaction</p></div>`;
+        updateNetworth();
         return;
     }
     RecordList.innerHTML = transactions
@@ -55,6 +73,7 @@ function renderTransactions(){
                 </div>
             </div>
         `).join('');
+ updateNetworth();
 }
 //Delete button
 const clearBtn = document.getElementById('clear-history');
