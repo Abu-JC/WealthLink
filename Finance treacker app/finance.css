@@ -267,8 +267,54 @@ input[type="date"] {
 }
 .a-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
 }
+/*Income and expense trackers*/
+.t-income,.t-expense{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 20px 5px;
+    background-color: white;
+    padding: 15px 0 15px 20px;
+    border-radius: 5px;
+
+}
+.t-income{
+    color: #3f423f;
+    font-weight: 600;
+    border-right: 4px solid rgb(7, 110, 7);
+}
+.t-income :nth-child(2){
+        color: #19aa36;
+        font-size: 1.6rem;
+}
+.t-expense{
+    color: #3f423f;
+    font-weight: 600;
+    border-right: 4px solid rgb(197, 20, 20);
+}
+.t-expense :nth-child(2){
+        color: #aa1919;
+        font-size: 1.6rem;
+}
+.t-income-btn,.t-expense-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+    width: 55px;
+    height: 55px;
+}
+.t-income-btn{
+     background-color: #19aa36da;
+}
+.t-expense-btn{
+     background-color: #bd0d0dcb;
+}
+    
 /*Transaction history*/
 
 .t-container {
