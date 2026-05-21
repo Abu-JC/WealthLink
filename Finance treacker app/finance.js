@@ -20,16 +20,18 @@ transactionForm.addEventListener('submit',event=>{
 function updateNetworth(){
     const totalIncome = transactions.reduce((total,current) =>{
         return current.type==='income'?total +parseFloat(current.amount):total;
+
     },0);
     const totalExpense = transactions.reduce((total,current)=>{
         return current.type==='expense'?total + parseFloat(current.amount):total;
     },0);
     const totalNetworth = totalIncome-totalExpense;
-    const formattedNetworth = totalNetworth.toLocaleString('en-KE',{
-         minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-})
+    const formattedNetworth = totalNetworth.toLocaleString('en-KE',{minimumFractionDigits: 2,maximumFractionDigits: 2});
+    const formattedIncome = totalIncome.toLocaleString('en-KE',{minimumFractionDigits:2,maximumFractionDigits:2});
+    const formattedExpense = totalExpense.toLocaleString('en-KE',{minimumFractionDigits:2,maximumFractionDigits:2});
 document.getElementById('networth-amount').textContent = `KSH ${formattedNetworth}`;
+document.getElementById('total-income-amount').textContent = `KSH ${formattedIncome}`;
+document.getElementById('total-expense-amount').textContent = `KSH ${formattedExpense}`;
 const styleNet = document.getElementById('networth-amount');
 styleNet.style.color = totalNetworth>=0 ? "#ffffff":"#db1421e8";
 }
@@ -83,7 +85,7 @@ clearBtn.addEventListener('click',event=>{
     renderTransactions();
 });
 
-
+//Upload image
 const fileInput = document.getElementById('file-upload');
 const profileDisplay = document.querySelector('.profile-img');
 const savedImage = localStorage.getItem('profile_image');
